@@ -60,7 +60,7 @@ def test_find_common_elements_absent():
 
 
 def test_part1_example():
-    input_strings = [
+    input_string_list = [
         "vJrwpWtwJgWrhcsFMMfFFhFp",
         "jqHRNqRjqzjGDLGLrsFMfFZSrLrFZsSL",
         "PmmdzqPrVvPwwTWBwg",
@@ -68,4 +68,16 @@ def test_part1_example():
         "ttgJtRGJQctTZtZT",
         "CrZsJsPPZsGzwwsLwLmpwMDw",
     ]
-    assert d3.part1(input_strings) == 157
+    assert d3.part1(input_string_list) == 157
+
+
+def test_part2_example():
+    input_string_list = [
+        "vJrwpWtwJgWrhcsFMMfFFhFp",
+        "jqHRNqRjqzjGDLGLrsFMfFZSrLrFZsSL",
+        "PmmdzqPrVvPwwTWBwg",
+        "wMqvLMZHhHMvwLHjbvcjnnSBnvTQFn",
+        "ttgJtRGJQctTZtZT",
+        "CrZsJsPPZsGzwwsLwLmpwMDw",
+    ]
+    assert d3.part2(input_string_list) == 70

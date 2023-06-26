@@ -37,10 +37,10 @@ def find_common_elements(list1: list, list2: list) -> list:
     return list(set(list1).intersection(list2))
 
 
-def part1(input_strings: list[str]) -> int:
+def part1(string_list: list[str]) -> int:
     ITEM_PRIORITY_MAP: dict[str, int] = priority_dict()
     total_score = 0
-    for input in input_strings:
+    for input in string_list:
         comp1, comp2 = split_string_in_half(input)
         common_elements = find_common_elements(comp1, comp2)
         assert len(common_elements) == 1, f"no common elements between '{comp1}' and '{comp2}'"
@@ -50,3 +50,20 @@ def part1(input_strings: list[str]) -> int:
 part_1_total = part1(input_strings)
 
 print(f"{part_1_total=}")
+
+
+def part2(string_list: list[str]) -> int:
+    ITEM_PRIORITY_MAP: dict[str, int] = priority_dict()
+    total_score = 0
+    for x in range(0, len(string_list)-1, 3):
+        common_elements = find_common_elements(string_list[x], string_list[x + 1])
+        assert len(common_elements) > 0, f"no common elements '{string_list=}' '{common_elements=}'"
+        common_elements = find_common_elements(string_list[x + 2], common_elements)
+        assert len(common_elements) == 1, f"no common elements '{string_list=}' '{common_elements=}'"
+        total_score += ITEM_PRIORITY_MAP[common_elements[0]]
+    return total_score
+
+
+part_2_total = part2(input_strings)
+
+print(f"{part_2_total=}")
