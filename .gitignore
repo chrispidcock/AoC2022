@@ -1,2 +1,4 @@
 input.txt
 */input_files/*
+__pycache__
+.pytest_cache
