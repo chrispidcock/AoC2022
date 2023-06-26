@@ -21,3 +21,5 @@ if args.day == 2:
     from src import day2
 if args.day == 3:
     from src import day3
+if args.day == 4:
+    from src import day4
